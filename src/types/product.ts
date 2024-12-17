@@ -3,13 +3,16 @@ export interface Product {
   name: string;
   description: string;
   price: number;
+  productType: string;
+  modelNumber: string;
   images: {
     [key: string]: string;
   };
   colors: string[];
   sizes: {
     name: string;
-    price: number;
+    offerprice: number;
+    oldprice: number;
   }[];
 }
 

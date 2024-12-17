@@ -17,10 +17,12 @@ export const product: Product = {
     black: Black,
   },
   colors: ["#816BFF", "#1FCEC9", "#4B97D3", "#3B4747"],
+  productType: "Watch",
+  modelNumber: "Forerunner 290XT",
   sizes: [
-    { name: "S", price: 69.0 },
-    { name: "M", price: 79.0 },
-    { name: "L", price: 89.0 },
-    { name: "XL", price: 99.0 },
+    { name: "S", offerprice: 69.0, oldprice: 79.0 },
+    { name: "M", offerprice: 79.0, oldprice: 89.0 },
+    { name: "L", offerprice: 89.0, oldprice: 99.0 },
+    { name: "XL", offerprice: 89.0, oldprice: 99.0 },
   ],
 };

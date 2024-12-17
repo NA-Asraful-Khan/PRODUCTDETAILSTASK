@@ -38,7 +38,7 @@ function ProductPage() {
         color: selectedColor,
         size: selectedSize,
         quantity,
-        price: size.price,
+        price: size.offerprice,
         image: product.images[selectedColor],
       })
     );
@@ -62,25 +62,58 @@ function ProductPage() {
               />
             </div>
 
-            <div className="lg:flex-1 p-8 lg:min-lg:w-[630px]">
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            <div className="lg:flex-1 p-8 lg:min-lg:w-[630px] flex flex-col justify-between">
+              <h1 className="text-[30px] md:text-[40px] text-[#364A63] leading-[44px] font-bold tracking-[-1.2px] my-[12px]">
                 {product.name}
               </h1>
-              <div className="flex items-center mb-4">
+              <div className="flex items-center gap-[4.5px] mb-[4px]">
                 <Star className="w-5 h-5 text-yellow-400 fill-current" />
                 <Star className="w-5 h-5 text-yellow-400 fill-current" />
                 <Star className="w-5 h-5 text-yellow-400 fill-current" />
-                <Star className="w-5 h-5 text-yellow-400 fill-current" />
-                <StarHalf className="w-5 h-5 text-yellow-400" />
-                <span className="ml-2 text-sm text-gray-500">(2 Reviews)</span>
+                <div className="flex w-[20px]  h-[20px]">
+                  <div className="relative">
+                    <StarHalf className="absolute top-0 left-0 w-5 h-5 text-yellow-400 fill-current" />
+                    <StarHalf className="absolute top-0 left-0 w-5 h-5 text-yellow-400 scale-x-[-1]" />
+                  </div>
+                </div>
+                <Star className="w-5 h-5 text-yellow-400" />
+                <span className="ml-2 text-sm text-[#8091A7]">(2 Reviews)</span>
               </div>
-              <p className="text-xl font-bold text-blue-600 mb-4">
-                $
-                {product.sizes
-                  .find((s) => s.name === selectedSize)
-                  ?.price.toFixed(2)}
+              <div className="flex gap-[5px] pt-[20px]">
+                <p className="text-[#8091A7] leading-[30px] text-[20px] font-normal">
+                  $
+                  {product.sizes
+                    .find((s) => s.name === selectedSize)
+                    ?.oldprice.toFixed(2)}
+                </p>
+                <p className="text-[#6576FF] leading-[30px] text-[24px] font-bold">
+                  $
+                  {product.sizes
+                    .find((s) => s.name === selectedSize)
+                    ?.offerprice.toFixed(2)}
+                </p>
+              </div>
+              <p className="text-[#8091A7] font-normal text-[18px] mt-[20px] leading-[30px]">
+                {product.description}
               </p>
-              <p className="text-gray-600 mb-8">{product.description}</p>
+              <div className="flex gap-[43px] mt-[20px]">
+                <div>
+                  <h3 className="text-[#8091A7] text-[14px]  leading-[23px] font-normal">
+                    Type
+                  </h3>
+                  <p className="text-[#364A63] text-[16px]  leading-[23px] font-bold">
+                    {product.productType}
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-[#8091A7] text-[14px]  leading-[23px] font-normal">
+                    Model Number
+                  </h3>
+                  <p className="text-[#364A63] text-[16px]  leading-[23px] font-bold">
+                    {product.modelNumber}
+                  </p>
+                </div>
+              </div>
               <div className="mb-8">
                 <h2 className="text-sm font-medium text-gray-900 mb-4">
                   Band Color
@@ -111,14 +144,16 @@ function ProductPage() {
                     <button
                       key={size.name}
                       onClick={() => setSelectedSize(size.name)}
-                      className={`px-4 py-2 text-sm font-medium rounded-md border ${
+                      className={`px-4 py-2 text-sm rounded-md border font-bold ${
                         selectedSize === size.name
                           ? "border-[#6576FF] text-[#6576FF]"
                           : "border-[#DBDFEA] text-[#364A63] hover:bg-gray-300"
                       }`}
                     >
                       {size.name}{" "}
-                      <span className="text-[#8091A7]">${size.price}</span>
+                      <span className="text-[#8091A7] font-normal">
+                        ${size.offerprice}
+                      </span>
                     </button>
                   ))}
                 </div>
