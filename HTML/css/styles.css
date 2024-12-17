@@ -1,0 +1,23 @@
+/* Custom styles */
+.color-option {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.color-option.selected {
+  box-shadow: 0 0 0 2px white, 0 0 0 4px rgb(59 130 246);
+}
+
+/* Prevent number input spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
