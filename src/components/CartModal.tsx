@@ -68,25 +68,27 @@ export const CartModal: React.FC = () => {
                       alt={item.name}
                       className="w-[36px] h-[36px] object-cover rounded"
                     />
-                    <h3 className="font-semibold">{item.name}</h3>
+                    <h3 className=" text-[#364A63] leading-[23px] text-[14px] font-normal ">
+                      {item.name}
+                    </h3>
                   </td>
                   <td>
-                    <p className="text-center text-sm text-gray-600">
+                    <p className="text-center capitalize text-[#364A63] leading-[23px] text-[14px] font-normal ">
                       {item.color}
                     </p>
                   </td>
                   <td>
-                    <p className="text-center text-sm text-gray-600">
+                    <p className="text-center text-[#364A63] leading-[23px] text-[14px] font-bold ">
                       {item.size}
                     </p>
                   </td>
                   <td>
-                    <p className="text-center text-sm text-gray-600">
+                    <p className="text-center text-[#364A63] leading-[23px] text-[14px] font-bold ">
                       {item.quantity}
                     </p>
                   </td>
                   <td>
-                    <p className="text-right font-semibold">
+                    <p className="text-right text-[#364A63] leading-[23px] text-[14px] font-bold">
                       ${(item.price * item.quantity).toFixed(2)}
                     </p>
                   </td>

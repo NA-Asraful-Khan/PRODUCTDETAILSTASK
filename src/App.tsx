@@ -6,7 +6,7 @@ import { addToCart, setCartOpen } from "./store/cartSlice";
 import { CartModal } from "./components/CartModal";
 import { product } from "./data/product";
 import { RootState } from "./store/store";
-import { Heart, Star, StarHalf } from "lucide-react";
+import { Heart, Minus, Plus, Star, StarHalf } from "lucide-react";
 import { Toaster } from "react-hot-toast";
 
 function ProductPage() {
@@ -168,7 +168,7 @@ function ProductPage() {
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
                     className="px-[8px] w-[35px] h-[36px]  py-[2px] rounded-l border  border-[#DBDFEA]"
                   >
-                    -
+                    <Minus />
                   </button>
                   <input
                     type="number"
@@ -182,7 +182,7 @@ function ProductPage() {
                     onClick={() => setQuantity(quantity + 1)}
                     className="px-[8px]  py-[2px]  w-[35px] h-[36px]  rounded-r border border-[#DBDFEA]"
                   >
-                    +
+                    <Plus />
                   </button>
                 </div>
                 {/*Add to Cart */}
