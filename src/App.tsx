@@ -80,7 +80,7 @@ function ProductPage() {
                 <span className="ml-2 text-sm text-[#8091A7]">(2 Reviews)</span>
               </div>
               <div className="flex gap-[5px] pt-[20px]">
-                <p className="text-[#8091A7] leading-[30px] text-[20px] font-normal">
+                <p className="text-[#8091A7] leading-[30px] text-[20px] font-normal line-through">
                   $
                   {product.sizes
                     .find((s) => s.name === selectedSize)
@@ -114,8 +114,8 @@ function ProductPage() {
                   </p>
                 </div>
               </div>
-              <div className="mb-8">
-                <h2 className="text-sm font-medium text-gray-900 mb-4">
+              <div className="mt-[20px]">
+                <h2 className=" text-[#364A63] mb-[10px] font-bold text-[18px] leading-[20px]">
                   Band Color
                 </h2>
                 <div className="flex space-x-3">
@@ -123,20 +123,20 @@ function ProductPage() {
                     <button
                       key={i}
                       onClick={() => handleColor(color)}
-                      className="w-8 h-8 rounded-full"
+                      className="w-[16px] h-[16px]  rounded-full"
                       style={{
                         backgroundColor: color.hex,
                         boxShadow:
                           selectedColor === color.hex
-                            ? `0 0 0 4px #ffffff, 0 0 0 6px ${color.hex}` // White gap + outer ring
+                            ? `0 0 0 3px #ffffff, 0 0 0 5px ${color.hex}` // White gap + outer ring
                             : "none",
                       }}
                     />
                   ))}
                 </div>
               </div>
-              <div className="mb-8">
-                <h2 className="text-sm font-medium text-gray-900 mb-4">
+              <div className="mt-[20px]">
+                <h2 className=" text-[#364A63] mb-[10px] font-bold text-[18px] leading-[20px]">
                   Wrist Size
                 </h2>
                 <div className="flex space-x-3">
@@ -159,7 +159,7 @@ function ProductPage() {
                 </div>
               </div>
               {/* Set Quantity and Add to Cart */}
-              <div className="flex justify-start items-center gap-[12px] text-[18px]">
+              <div className="flex justify-start items-center gap-[12px] text-[18px] mt-[20px]">
                 {/* Set Quantity */}
                 <div className="flex items-center text-[#8091A7] w-[130px] ">
                   <button
