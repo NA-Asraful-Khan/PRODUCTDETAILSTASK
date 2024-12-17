@@ -16,7 +16,7 @@ function ProductPage() {
   const [selectedSize, setSelectedSize] = useState(product.sizes[0].name);
   const [quantity, setQuantity] = useState(1);
   const cartItems = useSelector((state: RootState) => state.cart.items);
-  console.log(product.images.purple);
+
   const colors = [
     { name: "purple", hex: "#816BFF" },
     { name: "cyan", hex: "#1FCEC9" },
@@ -35,11 +35,13 @@ function ProductPage() {
       addToCart({
         id: product.id,
         name: product.name,
-        color: selectedColor,
+        color: colors
+          .filter((color) => color.hex === selectedColor)
+          .map((color) => color.name)[0],
         size: selectedSize,
         quantity,
         price: size.offerprice,
-        image: product.images[selectedColor],
+        image: `http://localhost:5173${product.images[selectedImage]}`,
       })
     );
   };
