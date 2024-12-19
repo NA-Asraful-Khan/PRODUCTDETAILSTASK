@@ -5,12 +5,10 @@ const product = {
   description:
     "I must explain to you how all this mistaken idea of denoun cing ple praising pain was born and I will give you a complete account of the system, and expound the actual teaching.",
   images: {
-    purple:
-      "https://images.unsplash.com/photo-1544117519-31a4b719223d?auto=format&fit=crop&q=80&w=1000",
-    cyan: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=1000",
-    blue: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&q=80&w=1000",
-    black:
-      "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&q=80&w=1000",
+    purple: "./asset/purple.png",
+    cyan: "./asset/cyan.png",
+    blue: "./asset/blue.png",
+    black: "./asset/black.png",
   },
   colors: ["purple", "cyan", "blue", "black"],
   sizes: [
@@ -56,10 +54,10 @@ function initializeSizeSelector() {
   const sizeSelector = document.getElementById("sizeSelector");
   product.sizes.forEach((size) => {
     const button = document.createElement("button");
-    button.className = `px-4 py-2 text-sm font-medium rounded-md ${
+    button.className = `px-4 py-2 text-sm rounded-md border font-bold  ${
       selectedSize === size.name
-        ? "bg-blue-600 text-white"
-        : "bg-gray-200 text-gray-900 hover:bg-gray-300"
+        ? "border-[#6576FF] text-[#6576FF]"
+        : "border-[#DBDFEA] text-[#364A63] hover:bg-gray-300"
     }`;
     button.textContent = `${size.name} $${size.price}`;
     button.onclick = () => selectSize(size.name);
@@ -83,10 +81,10 @@ function selectSize(size) {
   ).textContent = `$${selectedSizeData.price.toFixed(2)}`;
 
   document.querySelectorAll("#sizeSelector button").forEach((button) => {
-    button.className = `px-4 py-2 text-sm font-medium rounded-md ${
+    button.className = `px-4 py-2 text-sm rounded-md border font-bold ${
       size === button.textContent.split(" ")[0]
-        ? "bg-blue-600 text-white"
-        : "bg-gray-200 text-gray-900 hover:bg-gray-300"
+        ? "border-[#6576FF] text-[#6576FF]"
+        : "border-[#DBDFEA] text-[#364A63] hover:bg-gray-300"
     }`;
   });
 }
