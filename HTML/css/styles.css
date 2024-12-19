@@ -11,13 +11,14 @@
   box-shadow: 0 0 0 2px white, 0 0 0 4px rgb(59 130 246);
 }
 
-/* Prevent number input spinners */
+/* Hide arrows for Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
+/* Hide arrows for Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
 }

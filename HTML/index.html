@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Smart Watch Store</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {},
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Watch Store</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Roboto', 'sans-serif'], // Set Roboto as default sans font
+          },
         },
-      };
+      }}
     </script>
     <link rel="stylesheet" href="css/styles.css" />
-  </head>
+</head>
   <body class="bg-gray-50">
     <div class="mx-auto bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div class="lg:max-h-[720px] max-w-[1320px] mx-auto">
@@ -220,17 +224,38 @@
       id="cartModal"
       class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 hidden"
     >
-      <div class="bg-white rounded-lg w-full max-w-3xl">
+      <div class="bg-white rounded-lg p-6 max-w-[651px] w-full mx-4>
         <div class="p-6">
-          <h2 class="text-2xl font-semibold text-gray-900 mb-6">Your Cart</h2>
+          <h2 class="flex justify-between items-center mb-4">Your Cart</h2>
+
           <div
-            class="grid grid-cols-[2fr,1fr,1fr,1fr,1fr] gap-4 pb-2 border-b text-gray-600"
+            class="grid grid-cols-[4fr,1fr,1fr,1fr,1fr] gap-4 pb-2 border-b text-gray-600"
           >
-            <div>Item</div>
-            <div>Color</div>
-            <div>Size</div>
-            <div>Qnt</div>
-            <div class="text-right">Price</div>
+            <div
+              class="text-left font-normal leading-[23px] text-[14px] text-[#8091A7]"
+            >
+              Item
+            </div>
+            <div
+              class="font-normal text-center leading-[23px] text-[14px] text-[#8091A7]"
+            >
+              Color
+            </div>
+            <div
+              class="font-normal text-center leading-[23px] text-[14px] text-[#8091A7]"
+            >
+              Size
+            </div>
+            <div
+              class="font-normal text-center leading-[23px] text-[14px] text-[#8091A7]"
+            >
+              Qnt
+            </div>
+            <div
+              class="text-right font-normal leading-[23px] text-[14px] text-[#8091A7]"
+            >
+              Price
+            </div>
           </div>
           <div id="cartItems" class="max-h-[60vh] overflow-y-auto"></div>
           <div id="cartSummary" class="mt-4"></div>

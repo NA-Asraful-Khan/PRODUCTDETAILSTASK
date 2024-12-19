@@ -53,17 +53,25 @@ function updateCartDisplay() {
   cartItemsContainer.innerHTML = cartItems
     .map(
       (item) => `
-        <div class="grid grid-cols-[2fr,1fr,1fr,1fr,1fr] gap-4 py-4 border-b items-center">
-            <div class="flex items-center gap-3">
+        <div class="grid grid-cols-[4fr,1fr,1fr,1fr,1fr] gap-4 py-4 border-b items-center">
+            <div class="flex justify-start text-left items-center gap-[8px] ">
                 <img src="${item.image}" alt="${
         item.name
-      }" class="w-12 h-12 object-cover rounded">
-                <span class="text-sm font-medium">${item.name}</span>
+      }" class="w-[36px] h-[36px] object-cover rounded">
+                <span class="text-[#364A63] leading-[23px] text-[14px] font-normal ">${
+                  item.name
+                }</span>
             </div>
-            <div class="text-sm text-gray-600">${item.color}</div>
-            <div class="text-sm text-gray-600">${item.size}</div>
-            <div class="text-sm text-gray-600">${item.quantity}</div>
-            <div class="text-right font-medium">$${(
+            <div class="text-center capitalize text-[#364A63] leading-[23px] text-[14px] font-normal ">${
+              item.color
+            }</div>
+            <div class="text-center capitalize text-[#364A63] leading-[23px] text-[14px] font-bold ">${
+              item.size
+            }</div>
+            <div class="text-center capitalize text-[#364A63] leading-[23px] text-[14px] font-bold ">${
+              item.quantity
+            }</div>
+            <div class="text-right capitalize text-[#364A63] leading-[23px] text-[14px] font-bold ">$${(
               item.price * item.quantity
             ).toFixed(2)}</div>
         </div>
@@ -78,18 +86,20 @@ function updateCartDisplay() {
   );
 
   cartSummary.innerHTML = `
-        <div class="grid grid-cols-[2fr,1fr,1fr,1fr,1fr] gap-4 py-4 border-t">
-            <div class="font-medium">Total</div>
+        <div class="grid grid-cols-[4fr,1fr,1fr,1fr,1fr] gap-4 py-4">
+            <div class="text-left leading-[22px] text-[16px] text-[#364A63] font-bold">Total</div>
             <div></div>
             <div></div>
-            <div class="text-sm font-medium">${totalQuantity}</div>
-            <div class="text-right font-bold">$${totalPrice.toFixed(2)}</div>
+            <div class="leading-[34px] text-[14px] text-center text-[#364A63] font-bold">${totalQuantity}</div>
+            <div class="text-right leading-[34px] text-[18px] text-[#364A63] font-bold">$${totalPrice.toFixed(
+              2
+            )}</div>
         </div>
         <div class="flex justify-end gap-4 mt-6">
-            <button onclick="closeCart()" class="px-6 py-2 text-gray-600 bg-white border border-gray-300 rounded hover:bg-gray-50">
+            <button onclick="closeCart()" class="w-[152px] px-[18px] py-[8px] rounded-md border border-[#DBDFEA]  text-[#364A63] leading-[20px] text-[13px] font-bold">
                 Continue Shopping
             </button>
-            <button onclick="checkout()" class="px-6 py-2 text-white bg-blue-600 rounded hover:bg-blue-700">
+            <button onclick="checkout()" class="w-[94px] px-[18px] py-[8px] rounded-md bg-[#6576FF] text-white leading-[20px] text-[13px] font-bold">
                 Checkout
             </button>
         </div>
