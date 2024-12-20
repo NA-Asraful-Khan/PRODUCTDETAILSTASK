@@ -10,6 +10,7 @@ import { Heart, Minus, Plus, Star, StarHalf } from "lucide-react";
 import { Toaster } from "react-hot-toast";
 
 function ProductPage() {
+  console.log(window.location);
   const dispatch = useDispatch();
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
   const [selectedImage, setSelectedImage] = useState("purple");
@@ -41,7 +42,7 @@ function ProductPage() {
         size: selectedSize,
         quantity,
         price: size.offerprice,
-        image: `http://localhost:5173${product.images[selectedImage]}`,
+        image: `${window.location}${product.images[selectedImage]}`,
       })
     );
   };
@@ -58,7 +59,7 @@ function ProductPage() {
           <div className="lg:flex ">
             <div className="lg:flex-1 w-full">
               <img
-                src={`http://localhost:5173${product.images[selectedImage]}`}
+                src={`${window.location}${product.images[selectedImage]}`}
                 alt={product.name}
                 className="w-full h-auto max-w-[630px] max-h-[720px] object-cover"
               />

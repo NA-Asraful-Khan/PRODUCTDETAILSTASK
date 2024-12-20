@@ -1,9 +1,8 @@
 import { Product } from "../types/product";
-import BLUE from "../asset/blue.png";
-import PURPLE from "../asset/purple.png";
-import CYAN from "../asset/cyan.png";
-import Black from "../asset/black.png";
-
+import PURPLE from "/purple.png";
+import CYAN from "/cyan.png";
+import BLUE from "/blue.png";
+import BLACK from "/black.png";
 export const product: Product = {
   id: "1",
   name: "Classy Modern Smart watch",
@@ -14,7 +13,7 @@ export const product: Product = {
     purple: PURPLE,
     cyan: CYAN,
     blue: BLUE,
-    black: Black,
+    black: BLACK,
   },
   colors: ["#816BFF", "#1FCEC9", "#4B97D3", "#3B4747"],
   productType: "Watch",

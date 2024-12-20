@@ -10,7 +10,7 @@ export const CartItem: React.FC<CartItemProps> = ({ item }) => {
     <tr>
       <td>
         <img
-          src={`http://localhost:5173${item.image}`}
+          src={`${window.location}${item.image}`}
           alt={item.name}
           className="w-20 h-20 object-cover rounded"
         />
