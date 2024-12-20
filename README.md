@@ -33,6 +33,6 @@ Ensure you have the following installed on your machine:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-repository.git
-   cd your-repository
+   git clone https://github.com/NA-Asraful-Khan/PRODUCTDETAILSTASK.git
+   cd PRODUCTDETAILSTASK
    ```
